@@ -1,6 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-
+        Switcher switcher = new Switcher();
+        Lamp lamp = new Lamp();
+        Radio radio = new Radio();
+        switcher.consumer = lamp;
+        switcher.switchOn();
     }
 }
