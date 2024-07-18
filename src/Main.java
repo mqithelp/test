@@ -15,13 +15,13 @@ public class Main {
         switcher.addElectricityListiner(lamp);
         switcher.addElectricityListiner(new Fire());
         switcher.addElectricityListiner(
-                new ElectricityConsumer() {
-                    public void electricityOn() {
-                        System.out.println("FIRE! В анонимном классе!");
-                    }
-                });
+                () ->
+                {
+                    System.out.println("FIRE! В лямбда-функции классе!");
+                }
+    );
 
         switcher.switchOn();
 
-    }
+}
 }
