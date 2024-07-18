@@ -14,14 +14,9 @@ public class Main {
         switcher.addElectricityListiner(radio);
         switcher.addElectricityListiner(lamp);
         switcher.addElectricityListiner(new Fire());
-        switcher.addElectricityListiner(
-                () ->
-                {
-                    System.out.println("FIRE! В лямбда-функции классе!");
-                }
-    );
+        switcher.addElectricityListiner(() -> System.out.println("FIRE! В лямбда-функции классе!"));
 
         switcher.switchOn();
 
-}
+    }
 }
