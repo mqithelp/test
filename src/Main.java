@@ -8,12 +8,19 @@ public class Main {
         class Fire implements ElectricityConsumer {
             @Override
             public void electricityOn() {
-                System.out.println("Fire!");
+                System.out.println("Пожар! В обычном классе!");
             }
         }
         switcher.addElectricityListiner(radio);
         switcher.addElectricityListiner(lamp);
         switcher.addElectricityListiner(new Fire());
+        switcher.addElectricityListiner(
+                new ElectricityConsumer() {
+                    public void electricityOn() {
+                        System.out.println("FIRE! В анонимном классе!");
+                    }
+                });
+
         switcher.switchOn();
 
     }
