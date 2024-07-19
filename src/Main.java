@@ -1,4 +1,8 @@
 public class Main {
+    public static void fire(Object sender) {
+        System.out.println("Вызов из обчного статического метода.");
+    }
+
     public static void main(String[] args) {
         Switcher switcher = new Switcher();
         Lamp lamp = new Lamp();
@@ -25,7 +29,8 @@ public class Main {
         switcher.addElectricityListiner(
                 sender -> System.out.println("FIRE! В лямбда-выражении!")
         );
-
+        switcher.addElectricityListiner(sender -> Main.fire(sender));
+        switcher.addElectricityListiner(Main::fire);
         switcher.switchOn();
 
     }
