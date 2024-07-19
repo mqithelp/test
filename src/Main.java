@@ -26,9 +26,15 @@ public class Main {
                     }
                 }
         );
+
+        final String message = "Пожарище. Переменную передаём в лямбда выражение";
+
         switcher.addElectricityListiner(
                 sender -> System.out.println("FIRE! В лямбда-выражении!")
         );
+        //захват переменных
+        switcher.addElectricityListiner( sender -> System.out.println(message) );
+
         switcher.addElectricityListiner(sender -> Main.fire(sender));
         switcher.addElectricityListiner(Main::fire);
         switcher.switchOn();
