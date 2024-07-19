@@ -5,7 +5,7 @@ public class Lamp implements ElectricityConsumer {
         System.out.println("Lamp On");
     }
     @Override
-    public void electricityOn() {
+    public void electricityOn(Object sender) {
         lampOn();
     }
 }

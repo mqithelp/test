@@ -2,5 +2,5 @@
 
 @FunctionalInterface
 public interface ElectricityConsumer {
-    public void electricityOn();
+    public void electricityOn(Object sender);
 }

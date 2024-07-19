@@ -7,14 +7,24 @@ public class Main {
 
         class Fire implements ElectricityConsumer {
             @Override
-            public void electricityOn() {
+            public void electricityOn(Object sender) {
                 System.out.println("Пожар! В обычном классе!");
             }
         }
         switcher.addElectricityListiner(radio);
         switcher.addElectricityListiner(lamp);
         switcher.addElectricityListiner(new Fire());
-        switcher.addElectricityListiner(() -> System.out.println("FIRE! В лямбда-функции классе!"));
+        switcher.addElectricityListiner(
+                new ElectricityConsumer() {
+                    @Override
+                    public void electricityOn(Object sender) {
+                        System.out.println("Fire! Анонимный класс!");
+                    }
+                }
+        );
+        switcher.addElectricityListiner(
+                sender -> System.out.println("FIRE! В лямбда-выражении!")
+        );
 
         switcher.switchOn();
 

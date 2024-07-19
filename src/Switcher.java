@@ -16,7 +16,7 @@ public class Switcher {
     public void switchOn() {
         System.out.println("Switch On");
         for (ElectricityConsumer c : listeners) {
-            c.electricityOn();
+            c.electricityOn(this); //ссылка на сам объект Switcher
         }
     }
 }
